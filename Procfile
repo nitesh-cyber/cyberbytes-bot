@@ -1,2 +1,1 @@
-pyTelegramBotAPI
-requests
+web: python bot.py
