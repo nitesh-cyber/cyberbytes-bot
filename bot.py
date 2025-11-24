@@ -4,13 +4,12 @@ import json
 import requests
 import telebot
 
-# Telegram Bot Token (RAILWAY ENV)
+# Telegram Bot Token
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-# Lookup API (No key needed)
-LOOKUP_API = "https://numapi.anshapi.workers.dev/?num="
+# Hidden Lookup API (Railway ENV)
+LOOKUP_API = os.getenv("API_URL")
 
-# Telegram Bot Init
 bot = telebot.TeleBot(BOT_TOKEN)
 
 
@@ -103,7 +102,6 @@ def start(message):
 def lookup(message):
     number = message.text.strip()
 
-    # Show Hacker Loading
     bot.reply_to(message, loading())
 
     try:
